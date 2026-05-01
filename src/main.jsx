@@ -2,7 +2,6 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowUpRight,
-  Code2,
   Github,
   Linkedin,
   Mail,
@@ -70,10 +69,6 @@ function App() {
           </div>
           <div className="orbit orbitOne" />
           <div className="orbit orbitTwo" />
-          <div className="codePanel">
-            <Code2 size={20} />
-            <span>Building clear, useful web experiences</span>
-          </div>
         </div>
 
         <div className="heroContent">
