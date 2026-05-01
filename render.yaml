@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: pallapu-vennela-portfolio
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: true
