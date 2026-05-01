@@ -13,17 +13,17 @@ import './styles.css';
 const profileLinks = [
   {
     label: 'GitHub',
-    href: 'https://github.com/your-github-username',
+    href: 'https://github.com/Pallapuvennela12',
     icon: Github,
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/your-linkedin-username',
+    href: 'https://www.linkedin.com/in/pallapu-vennela-85910b367/',
     icon: Linkedin,
   },
   {
     label: 'CodeChef',
-    href: 'https://www.codechef.com/users/your-codechef-username',
+    href: 'https://www.codechef.com/users/veni_06',
     icon: Trophy,
   },
 ];
