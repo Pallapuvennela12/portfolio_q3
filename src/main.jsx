@@ -2,9 +2,12 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowUpRight,
+  BadgeCheck,
+  Blocks,
   Github,
   Linkedin,
   Mail,
+  Sparkles,
   Trophy,
 } from 'lucide-react';
 import './styles.css';
@@ -28,14 +31,14 @@ const profileLinks = [
 ];
 
 const skills = [
-  'React',
+  'React UI',
   'JavaScript',
-  'HTML',
-  'CSS',
+  'HTML5',
+  'CSS3',
   'Java',
   'Problem Solving',
-  'GitHub',
-  'Responsive UI',
+  'Git & GitHub',
+  'Responsive Design',
 ];
 
 const projects = [
@@ -44,19 +47,28 @@ const projects = [
     description:
       'A clean dashboard concept for tracking student tasks, submissions, and progress across coursework.',
     stack: 'React, CSS, JavaScript',
+    accent: '01',
   },
   {
     title: 'Coding Practice Tracker',
     description:
       'A portfolio-ready idea for displaying coding streaks, solved problems, and platform profile links.',
     stack: 'React, Local Data',
+    accent: '02',
   },
   {
     title: 'Personal Portfolio',
     description:
       'This responsive website with profile highlights, project cards, and direct links to coding profiles.',
     stack: 'React, Vite',
+    accent: '03',
   },
+];
+
+const highlights = [
+  { value: '3+', label: 'Profile links' },
+  { value: '8', label: 'Core skills' },
+  { value: '100%', label: 'Responsive' },
 ];
 
 function App() {
@@ -64,11 +76,19 @@ function App() {
     <main>
       <section className="hero" aria-label="Portfolio introduction">
         <div className="heroVisual" aria-hidden="true">
+          <div className="floatingBadge badgeTop">
+            <Sparkles size={18} />
+            Creative frontend learner
+          </div>
           <div className="portrait">
             <span>PV</span>
           </div>
           <div className="orbit orbitOne" />
           <div className="orbit orbitTwo" />
+          <div className="floatingBadge badgeBottom">
+            <BadgeCheck size={18} />
+            React Portfolio
+          </div>
         </div>
 
         <div className="heroContent">
@@ -86,6 +106,15 @@ function App() {
                 <span>{label}</span>
                 <ArrowUpRight size={16} />
               </a>
+            ))}
+          </div>
+
+          <div className="highlightStrip" aria-label="Portfolio highlights">
+            {highlights.map((item) => (
+              <div key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
             ))}
           </div>
         </div>
@@ -110,7 +139,10 @@ function App() {
         </div>
         <div className="skillGrid">
           {skills.map((skill) => (
-            <span key={skill}>{skill}</span>
+            <span key={skill}>
+              <Blocks size={17} />
+              {skill}
+            </span>
           ))}
         </div>
       </section>
@@ -123,6 +155,7 @@ function App() {
         <div className="projectGrid">
           {projects.map((project) => (
             <article className="projectCard" key={project.title}>
+              <div className="projectNumber">{project.accent}</div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <span>{project.stack}</span>
